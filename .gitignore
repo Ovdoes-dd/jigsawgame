@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+dist/
+build/
+out/
+*.log
+
+# Electron builds
+*.exe
+*.dmg
+*.AppImage
+
+# Editor files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db

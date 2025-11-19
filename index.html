@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>jigsawGame</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- 全局 Phaser：确保 lib/phaser.js 存在 -->
+  <script src="./lib/phaser.js"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #0d1117;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif;
+    }
+    #game-container {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .error-overlay {
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%; pointer-events: none;
+      color: #ff6;
+      font-size: 12px;
+      white-space: pre-wrap;
+      padding: 6px 10px;
+      font-family: Consolas, monospace;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <div id="error-log" class="error-overlay"></div>
+  </div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

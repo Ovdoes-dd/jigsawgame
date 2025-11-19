@@ -1,0 +1,66 @@
+{
+  "name": "jigsawgame",
+  "version": "1.0.0",
+  "description": "Jigsaw Puzzle Game (Electron + Phaser)",
+  "main": "electron-main.mjs",
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --x64",
+    "dist:portable": "electron-builder --win portable --x64",
+    "dist:all": "electron-builder --win nsis portable --x64"
+  },
+  "devDependencies": {
+    "electron": "38.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.example.jigsawgame",
+    "productName": "拼图大师",
+    "files": [
+      "electron-main.mjs",
+      "index.html",
+      "assets/**/*",
+      "src/**/*",
+      "lib/*",
+      "build/*",
+      "package.json"
+    ],
+    "asar": true,
+    "asarUnpack": [],
+    "directories": {
+      "buildResources": "build"
+    },
+    "extraResources": [],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "JigsawGame",
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "${productName}-Portable-${version}.${ext}"
+    }
+  }
+}
