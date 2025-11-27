@@ -9,6 +9,7 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 1280,
     height: 720,
+    resizable: false,
     backgroundColor: '#0d1117',
      icon: path.join(__dirname, 'build', 'icon.ico'),  // 开发 & 打包后都适用
     show: true,
